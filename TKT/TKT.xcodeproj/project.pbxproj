@@ -1,0 +1,430 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4DAA9AD3B0903DE6D8BBB79E /* Pods_TKT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCAF94C3A740118A8CC7232 /* Pods_TKT.framework */; };
+		D5C9E9462957A34000351F3E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5C9E9452957A34000351F3E /* GoogleService-Info.plist */; };
+		D5E9DD0729578A3C002D5A09 /* TKTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9DD0629578A3C002D5A09 /* TKTApp.swift */; };
+		D5E9DD0929578A3C002D5A09 /* SignIniew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9DD0829578A3C002D5A09 /* SignIniew.swift */; };
+		D5E9DD0B29578A3E002D5A09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5E9DD0A29578A3E002D5A09 /* Assets.xcassets */; };
+		D5E9DD0E29578A3E002D5A09 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5E9DD0D29578A3E002D5A09 /* Preview Assets.xcassets */; };
+		D5E9DD1729579212002D5A09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9DD1629579212002D5A09 /* AppDelegate.swift */; };
+		D5E9DD1929579B07002D5A09 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9DD1829579B07002D5A09 /* ContentView.swift */; };
+		D5E9DD1B29579B7E002D5A09 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9DD1A29579B7E002D5A09 /* Home.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		60C5D0636A221C198FF0912C /* Pods-TKT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TKT.release.xcconfig"; path = "Target Support Files/Pods-TKT/Pods-TKT.release.xcconfig"; sourceTree = "<group>"; };
+		BE62FBB9DE767DB83E4913CB /* Pods-TKT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TKT.debug.xcconfig"; path = "Target Support Files/Pods-TKT/Pods-TKT.debug.xcconfig"; sourceTree = "<group>"; };
+		D5C9E9452957A34000351F3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D5E9DD0329578A3C002D5A09 /* TKT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5E9DD0629578A3C002D5A09 /* TKTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TKTApp.swift; sourceTree = "<group>"; };
+		D5E9DD0829578A3C002D5A09 /* SignIniew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIniew.swift; sourceTree = "<group>"; };
+		D5E9DD0A29578A3E002D5A09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D5E9DD0D29578A3E002D5A09 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D5E9DD1629579212002D5A09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D5E9DD1829579B07002D5A09 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D5E9DD1A29579B7E002D5A09 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		DFCAF94C3A740118A8CC7232 /* Pods_TKT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TKT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5E9DD0029578A3C002D5A09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DAA9AD3B0903DE6D8BBB79E /* Pods_TKT.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		178FE35A33BCBA2DC3FAB62E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE62FBB9DE767DB83E4913CB /* Pods-TKT.debug.xcconfig */,
+				60C5D0636A221C198FF0912C /* Pods-TKT.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BEF4EDB1723E546DA90B01B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DFCAF94C3A740118A8CC7232 /* Pods_TKT.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5E9DCFA29578A3C002D5A09 = {
+			isa = PBXGroup;
+			children = (
+				D5E9DD0529578A3C002D5A09 /* TKT */,
+				D5E9DD0429578A3C002D5A09 /* Products */,
+				178FE35A33BCBA2DC3FAB62E /* Pods */,
+				BEF4EDB1723E546DA90B01B5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D5E9DD0429578A3C002D5A09 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5E9DD0329578A3C002D5A09 /* TKT.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5E9DD0529578A3C002D5A09 /* TKT */ = {
+			isa = PBXGroup;
+			children = (
+				D5E9DD0629578A3C002D5A09 /* TKTApp.swift */,
+				D5E9DD1629579212002D5A09 /* AppDelegate.swift */,
+				D5E9DD0829578A3C002D5A09 /* SignIniew.swift */,
+				D5E9DD1A29579B7E002D5A09 /* Home.swift */,
+				D5E9DD1829579B07002D5A09 /* ContentView.swift */,
+				D5C9E9452957A34000351F3E /* GoogleService-Info.plist */,
+				D5E9DD0A29578A3E002D5A09 /* Assets.xcassets */,
+				D5E9DD0C29578A3E002D5A09 /* Preview Content */,
+			);
+			path = TKT;
+			sourceTree = "<group>";
+		};
+		D5E9DD0C29578A3E002D5A09 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D5E9DD0D29578A3E002D5A09 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D5E9DD0229578A3C002D5A09 /* TKT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5E9DD1129578A3E002D5A09 /* Build configuration list for PBXNativeTarget "TKT" */;
+			buildPhases = (
+				8DE2C187EF948C1790A23552 /* [CP] Check Pods Manifest.lock */,
+				D5E9DCFF29578A3C002D5A09 /* Sources */,
+				D5E9DD0029578A3C002D5A09 /* Frameworks */,
+				D5E9DD0129578A3C002D5A09 /* Resources */,
+				080A3305E227D1D6DF226682 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TKT;
+			productName = TKT;
+			productReference = D5E9DD0329578A3C002D5A09 /* TKT.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5E9DCFB29578A3C002D5A09 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					D5E9DD0229578A3C002D5A09 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = D5E9DCFE29578A3C002D5A09 /* Build configuration list for PBXProject "TKT" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D5E9DCFA29578A3C002D5A09;
+			productRefGroup = D5E9DD0429578A3C002D5A09 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5E9DD0229578A3C002D5A09 /* TKT */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5E9DD0129578A3C002D5A09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5E9DD0E29578A3E002D5A09 /* Preview Assets.xcassets in Resources */,
+				D5E9DD0B29578A3E002D5A09 /* Assets.xcassets in Resources */,
+				D5C9E9462957A34000351F3E /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		080A3305E227D1D6DF226682 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TKT/Pods-TKT-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TKT/Pods-TKT-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TKT/Pods-TKT-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DE2C187EF948C1790A23552 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TKT-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5E9DCFF29578A3C002D5A09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5E9DD1729579212002D5A09 /* AppDelegate.swift in Sources */,
+				D5E9DD0929578A3C002D5A09 /* SignIniew.swift in Sources */,
+				D5E9DD1B29579B7E002D5A09 /* Home.swift in Sources */,
+				D5E9DD1929579B07002D5A09 /* ContentView.swift in Sources */,
+				D5E9DD0729578A3C002D5A09 /* TKTApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D5E9DD0F29578A3E002D5A09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D5E9DD1029578A3E002D5A09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D5E9DD1229578A3E002D5A09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE62FBB9DE767DB83E4913CB /* Pods-TKT.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TKT/Preview Content\"";
+				DEVELOPMENT_TEAM = V54S3A3W4Z;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Vakil-Kalandarov.TKT";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D5E9DD1329578A3E002D5A09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60C5D0636A221C198FF0912C /* Pods-TKT.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TKT/Preview Content\"";
+				DEVELOPMENT_TEAM = V54S3A3W4Z;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Vakil-Kalandarov.TKT";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5E9DCFE29578A3C002D5A09 /* Build configuration list for PBXProject "TKT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5E9DD0F29578A3E002D5A09 /* Debug */,
+				D5E9DD1029578A3E002D5A09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5E9DD1129578A3E002D5A09 /* Build configuration list for PBXNativeTarget "TKT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5E9DD1229578A3E002D5A09 /* Debug */,
+				D5E9DD1329578A3E002D5A09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D5E9DCFB29578A3C002D5A09 /* Project object */;
+}
