@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		4DAA9AD3B0903DE6D8BBB79E /* Pods_TKT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCAF94C3A740118A8CC7232 /* Pods_TKT.framework */; };
+		D59EAB892996BF6A00C93675 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59EAB882996BF6A00C93675 /* OrderView.swift */; };
+		D59EAB8E2996C52900C93675 /* OrderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59EAB8D2996C52900C93675 /* OrderRow.swift */; };
+		D59EAB902996C55600C93675 /* ModelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59EAB8F2996C55600C93675 /* ModelRow.swift */; };
+		D59EAB932996E0F600C93675 /* DetailOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59EAB922996E0F600C93675 /* DetailOrder.swift */; };
+		D59EAB972997A64200C93675 /* SettingsUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59EAB962997A64200C93675 /* SettingsUser.swift */; };
+		D59EAB9A2997AEBA00C93675 /* LocalizableRU.strings in Resources */ = {isa = PBXBuildFile; fileRef = D59EAB9C2997AEBA00C93675 /* LocalizableRU.strings */; };
+		D59EAB9F2997AF4600C93675 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59EAB9E2997AF4600C93675 /* Extension.swift */; };
 		D5C9E9462957A34000351F3E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5C9E9452957A34000351F3E /* GoogleService-Info.plist */; };
 		D5E9DD0729578A3C002D5A09 /* TKTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9DD0629578A3C002D5A09 /* TKTApp.swift */; };
 		D5E9DD0929578A3C002D5A09 /* SignIniew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9DD0829578A3C002D5A09 /* SignIniew.swift */; };
@@ -21,6 +28,14 @@
 /* Begin PBXFileReference section */
 		60C5D0636A221C198FF0912C /* Pods-TKT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TKT.release.xcconfig"; path = "Target Support Files/Pods-TKT/Pods-TKT.release.xcconfig"; sourceTree = "<group>"; };
 		BE62FBB9DE767DB83E4913CB /* Pods-TKT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TKT.debug.xcconfig"; path = "Target Support Files/Pods-TKT/Pods-TKT.debug.xcconfig"; sourceTree = "<group>"; };
+		D59EAB882996BF6A00C93675 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderView.swift; path = "../New Group/OrderView.swift"; sourceTree = "<group>"; };
+		D59EAB8D2996C52900C93675 /* OrderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRow.swift; sourceTree = "<group>"; };
+		D59EAB8F2996C55600C93675 /* ModelRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelRow.swift; sourceTree = "<group>"; };
+		D59EAB922996E0F600C93675 /* DetailOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOrder.swift; sourceTree = "<group>"; };
+		D59EAB942997A2A500C93675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D59EAB962997A64200C93675 /* SettingsUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUser.swift; sourceTree = "<group>"; };
+		D59EAB9B2997AEBA00C93675 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LocalizableRU.strings; sourceTree = "<group>"; };
+		D59EAB9E2997AF4600C93675 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		D5C9E9452957A34000351F3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D5E9DD0329578A3C002D5A09 /* TKT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E9DD0629578A3C002D5A09 /* TKTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TKTApp.swift; sourceTree = "<group>"; };
@@ -62,6 +77,59 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D59EAB8A2996BF7600C93675 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				D59EAB882996BF6A00C93675 /* OrderView.swift */,
+				D59EAB8D2996C52900C93675 /* OrderRow.swift */,
+				D59EAB8F2996C55600C93675 /* ModelRow.swift */,
+				D59EAB912996E0D100C93675 /* Detail */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		D59EAB8B2996C00600C93675 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				D5E9DD0829578A3C002D5A09 /* SignIniew.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		D59EAB8C2996C01C00C93675 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D5E9DD0629578A3C002D5A09 /* TKTApp.swift */,
+				D5E9DD1629579212002D5A09 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D59EAB912996E0D100C93675 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D59EAB922996E0F600C93675 /* DetailOrder.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		D59EAB952997A60400C93675 /* SettingsUser */ = {
+			isa = PBXGroup;
+			children = (
+				D59EAB9D2997AF2900C93675 /* Extension */,
+				D59EAB962997A64200C93675 /* SettingsUser.swift */,
+			);
+			path = SettingsUser;
+			sourceTree = "<group>";
+		};
+		D59EAB9D2997AF2900C93675 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D59EAB9E2997AF4600C93675 /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		D5E9DCFA29578A3C002D5A09 = {
 			isa = PBXGroup;
 			children = (
@@ -83,11 +151,14 @@
 		D5E9DD0529578A3C002D5A09 /* TKT */ = {
 			isa = PBXGroup;
 			children = (
-				D5E9DD0629578A3C002D5A09 /* TKTApp.swift */,
-				D5E9DD1629579212002D5A09 /* AppDelegate.swift */,
-				D5E9DD0829578A3C002D5A09 /* SignIniew.swift */,
+				D59EAB9C2997AEBA00C93675 /* LocalizableRU.strings */,
+				D59EAB942997A2A500C93675 /* Info.plist */,
+				D59EAB952997A60400C93675 /* SettingsUser */,
+				D59EAB8C2996C01C00C93675 /* AppDelegate */,
+				D59EAB8B2996C00600C93675 /* SignIn */,
 				D5E9DD1A29579B7E002D5A09 /* Home.swift */,
 				D5E9DD1829579B07002D5A09 /* ContentView.swift */,
+				D59EAB8A2996BF7600C93675 /* Order */,
 				D5C9E9452957A34000351F3E /* GoogleService-Info.plist */,
 				D5E9DD0A29578A3E002D5A09 /* Assets.xcassets */,
 				D5E9DD0C29578A3E002D5A09 /* Preview Content */,
@@ -147,6 +218,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = D5E9DCFA29578A3C002D5A09;
 			productRefGroup = D5E9DD0429578A3C002D5A09 /* Products */;
@@ -165,6 +237,7 @@
 			files = (
 				D5E9DD0E29578A3E002D5A09 /* Preview Assets.xcassets in Resources */,
 				D5E9DD0B29578A3E002D5A09 /* Assets.xcassets in Resources */,
+				D59EAB9A2997AEBA00C93675 /* LocalizableRU.strings in Resources */,
 				D5C9E9462957A34000351F3E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,13 +293,30 @@
 			files = (
 				D5E9DD1729579212002D5A09 /* AppDelegate.swift in Sources */,
 				D5E9DD0929578A3C002D5A09 /* SignIniew.swift in Sources */,
+				D59EAB902996C55600C93675 /* ModelRow.swift in Sources */,
+				D59EAB8E2996C52900C93675 /* OrderRow.swift in Sources */,
+				D59EAB9F2997AF4600C93675 /* Extension.swift in Sources */,
 				D5E9DD1B29579B7E002D5A09 /* Home.swift in Sources */,
+				D59EAB892996BF6A00C93675 /* OrderView.swift in Sources */,
+				D59EAB932996E0F600C93675 /* DetailOrder.swift in Sources */,
 				D5E9DD1929579B07002D5A09 /* ContentView.swift in Sources */,
 				D5E9DD0729578A3C002D5A09 /* TKTApp.swift in Sources */,
+				D59EAB972997A64200C93675 /* SettingsUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D59EAB9C2997AEBA00C93675 /* LocalizableRU.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D59EAB9B2997AEBA00C93675 /* ru */,
+			);
+			name = LocalizableRU.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D5E9DD0F29578A3E002D5A09 /* Debug */ = {
@@ -355,11 +445,12 @@
 				DEVELOPMENT_TEAM = V54S3A3W4Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = TKT/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -385,11 +476,12 @@
 				DEVELOPMENT_TEAM = V54S3A3W4Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = TKT/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

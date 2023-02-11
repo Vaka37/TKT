@@ -11,22 +11,21 @@ struct ContentView: View {
     @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
     var body: some View {
         VStack{
-        if status{
-            Home()
-        }else{
-            SignIniew()
-        }
-        
-        }.animation(.spring())
-        .onAppear {
-        
-        NotificationCenter.default.addObserver(forName: NSNotification.Name("statusChange"), object: nil, queue: .main) { (_) in
+            if status{
+                OrderView()
+            }else{
+                SignIniew()
+            }
             
-            let status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
-            self.status = status
-        }
-        }
-}
+        }.animation(.spring())
+            .onAppear {
+                NotificationCenter.default.addObserver(forName: NSNotification.Name("statusChange"), object: nil, queue: .main) { (_) in
+                    
+                    let status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
+                    self.status = status
+                }
+            }
+    }
 }
 
 
