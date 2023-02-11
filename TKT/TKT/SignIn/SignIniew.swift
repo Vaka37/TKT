@@ -8,6 +8,7 @@
 import SwiftUI
 import FirebaseCore
 import FirebaseAuth
+import UIKit
 
 struct SignIniew: View {
     @StateObject var settingUser = SettingsUser()
@@ -17,22 +18,25 @@ struct SignIniew: View {
     @State var message = ""
     @State var alert = false
     @State var show = false
+    @State private var angle: Double = 0.0
+    @State var colors: [Color] = [.red, .blue, .green, .purple]
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         VStack{
-            Text("Sign In")
+            Text("Войти")
                 .fontWeight(.heavy).font(.largeTitle)
                 .padding()
             VStack(alignment: .leading){
-                Text("Username")
-                TextField("Enter Your Username", text: $settingUser.nameUser).textFieldStyle(.roundedBorder)
+                Text("Имя")
+                TextField("Введите ваше имя", text: $settingUser.nameUser).textFieldStyle(.roundedBorder)
                 Text("e-mail")
-                TextField("Enter Your e-mail", text: $settingUser.loginTextField).textFieldStyle(.roundedBorder)
-                Text("Password")
-                TextField("Enter Your Password", text: $settingUser.passwordTextField).textFieldStyle(.roundedBorder)
-            }
-            Spacer().frame(height: 50)
+                TextField("Введите ваш e-mail", text: $settingUser.loginTextField).textFieldStyle(.roundedBorder)
+                Text("Пароль")
+                TextField("Введите ваш пароль", text: $settingUser.passwordTextField).textFieldStyle(.roundedBorder)
+            }.padding()
             Button {
+                timer.upstream.connect().cancel()
                 signInWithEmail(email: self.settingUser.loginTextField, password: self.settingUser.passwordTextField) { verified, status in
                     if !verified {
                         self.message = status
@@ -43,14 +47,48 @@ struct SignIniew: View {
                     }
                 }
             } label: {
-                Text("Sign in")
+                GeometryReader(content: { geometry in
+                    ZStack {
+                        AngularGradient(gradient: Gradient(colors: colors),
+                                        center: .center,
+                                        angle: .degrees(angle))
+                        .blendMode(.overlay)
+                        .blur(radius: 6)
+                        .mask(
+                            RoundedRectangle(cornerRadius: 16)
+                                .frame(maxWidth: geometry.size.width - 16)
+                                .frame(height: 50)
+                                .blur(radius: 6)
+                        )
+                        .onAppear() {
+                            withAnimation(Animation.linear(duration: 7)
+                                .repeatForever(autoreverses: false)) {
+                                    angle += 360
+                                }
+                        }
+                        .onReceive(timer) { input in
+                            colors.swapAt(0, 1)
+                            colors.swapAt(1, 2)
+                            colors.swapAt(2, 3)
+                        }
+                        Text("Войти")
+                            .font(.title2)
+                            .bold()
+                            .foregroundColor(Color.black)
+                            .frame(height: 50)
+                            .frame(maxWidth: geometry.size.width - 16)
+                            .background(Color.white)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 16)
+                                    .stroke(Color.white, lineWidth: 1)
+                                    .opacity(0.9)
+                            )
+                            .cornerRadius(16)
+                    }
+                })
             }.alert(isPresented: $alert) {
                 Alert(title: Text("Error"), message: Text(self.message), dismissButton: .default(Text("OK")))
             }
-            .foregroundColor(.white)
-            .buttonStyle(.bordered)
-            .frame(width: 130, height: 90)
-            .background(Color.green)
             Spacer().frame(height: 50)
             HStack{
                 Text("Нет Аккаунта? ->")
@@ -62,6 +100,8 @@ struct SignIniew: View {
             }.sheet(isPresented: $show) {
                 SignUp(show: self.show)
             }
+        }.onTapGesture {
+            hideKeyboard()
         }
     }
 }
@@ -81,12 +121,12 @@ struct SignUp:View{
                 .fontWeight(.heavy).font(.largeTitle)
                 .padding()
             VStack(alignment: .leading){
-                Text("Username")
-                TextField("Enter Your Username", text: $settingUser.nameUser).textFieldStyle(.roundedBorder)
+                Text("Имя")
+                TextField("Введите ваше имя", text: $settingUser.nameUser).textFieldStyle(.roundedBorder)
                 Text("e-mail")
-                TextField("Enter Your e-mail", text: $settingUser.loginTextField).textFieldStyle(.roundedBorder)
-                Text("Password")
-                TextField("Enter Your Password", text: $settingUser.passwordTextField).textFieldStyle(.roundedBorder)
+                TextField("Введите ваш e-mail", text: $settingUser.loginTextField).textFieldStyle(.roundedBorder)
+                Text("Пароль")
+                TextField("Введите ваш пароль", text: $settingUser.passwordTextField).textFieldStyle(.roundedBorder)
             }
             Spacer().frame(height: 50)
             Button {
@@ -108,36 +148,30 @@ struct SignUp:View{
             .foregroundColor(.white)
             .buttonStyle(.bordered)
             .frame(width: 130, height: 90)
-            .background(Color.green)
             Spacer().frame(height: 50)
             
+        }.onTapGesture {
+            hideKeyboard()
         }
     }
     
 }
-        
-        func signInWithEmail(email: String, password: String,complition: @escaping(Bool,String) -> Void) {
-            Auth.auth().signIn(withEmail: email, password: password){ (res,error) in
-                if error != nil{
-                    complition(false,(error?.localizedDescription)!)
-                    return
-                }
-                complition(true,(res?.user.email)!)
-            }
-    }
-    func signUpWithEmail(email: String, password: String,complition: @escaping(Bool,String) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password){ (res,error) in
-            if error != nil{
-                complition(false,(error?.localizedDescription)!)
-                return
-            }
-            complition(true,(res?.user.email)!)
+func signInWithEmail(email: String, password: String,complition: @escaping(Bool,String) -> Void) {
+    Auth.auth().signIn(withEmail: email, password: password){ (res,error) in
+        if error != nil{
+            complition(false,(error?.localizedDescription)!)
+            return
         }
+        complition(true,(res?.user.email)!)
+    }
+}
+func signUpWithEmail(email: String, password: String,complition: @escaping(Bool,String) -> Void) {
+    Auth.auth().createUser(withEmail: email, password: password){ (res,error) in
+        if error != nil{
+            complition(false,(error?.localizedDescription)!)
+            return
+        }
+        complition(true,(res?.user.email)!)
+    }
 }
 
-
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
