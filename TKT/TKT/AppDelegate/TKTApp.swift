@@ -13,10 +13,12 @@ import FirebaseCore
 @main
 
 struct TKTApp: App {
+    @StateObject var dataModel = DataManager()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(dataModel)
         }
     }
 }

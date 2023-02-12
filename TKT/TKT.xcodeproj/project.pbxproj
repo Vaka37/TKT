@@ -15,6 +15,7 @@
 		D59EAB972997A64200C93675 /* SettingsUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59EAB962997A64200C93675 /* SettingsUser.swift */; };
 		D59EAB9A2997AEBA00C93675 /* LocalizableRU.strings in Resources */ = {isa = PBXBuildFile; fileRef = D59EAB9C2997AEBA00C93675 /* LocalizableRU.strings */; };
 		D59EAB9F2997AF4600C93675 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59EAB9E2997AF4600C93675 /* Extension.swift */; };
+		D59EABA12999422300C93675 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59EABA02999422300C93675 /* DataManager.swift */; };
 		D5C9E9462957A34000351F3E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5C9E9452957A34000351F3E /* GoogleService-Info.plist */; };
 		D5E9DD0729578A3C002D5A09 /* TKTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9DD0629578A3C002D5A09 /* TKTApp.swift */; };
 		D5E9DD0929578A3C002D5A09 /* SignIniew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9DD0829578A3C002D5A09 /* SignIniew.swift */; };
@@ -36,6 +37,7 @@
 		D59EAB962997A64200C93675 /* SettingsUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUser.swift; sourceTree = "<group>"; };
 		D59EAB9B2997AEBA00C93675 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LocalizableRU.strings; sourceTree = "<group>"; };
 		D59EAB9E2997AF4600C93675 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		D59EABA02999422300C93675 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D5C9E9452957A34000351F3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D5E9DD0329578A3C002D5A09 /* TKT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E9DD0629578A3C002D5A09 /* TKTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TKTApp.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				D59EAB8D2996C52900C93675 /* OrderRow.swift */,
 				D59EAB8F2996C55600C93675 /* ModelRow.swift */,
 				D59EAB912996E0D100C93675 /* Detail */,
+				D59EABA02999422300C93675 /* DataManager.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5E9DD1729579212002D5A09 /* AppDelegate.swift in Sources */,
+				D59EABA12999422300C93675 /* DataManager.swift in Sources */,
 				D5E9DD0929578A3C002D5A09 /* SignIniew.swift in Sources */,
 				D59EAB902996C55600C93675 /* ModelRow.swift in Sources */,
 				D59EAB8E2996C52900C93675 /* OrderRow.swift in Sources */,

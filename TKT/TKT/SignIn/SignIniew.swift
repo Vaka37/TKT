@@ -24,7 +24,7 @@ struct SignIniew: View {
     
     var body: some View {
         VStack{
-            Text("Войти")
+            Text("Вход")
                 .fontWeight(.heavy).font(.largeTitle)
                 .padding()
             VStack(alignment: .leading){
@@ -36,7 +36,6 @@ struct SignIniew: View {
                 TextField("Введите ваш пароль", text: $settingUser.passwordTextField).textFieldStyle(.roundedBorder)
             }.padding()
             Button {
-                timer.upstream.connect().cancel()
                 signInWithEmail(email: self.settingUser.loginTextField, password: self.settingUser.passwordTextField) { verified, status in
                     if !verified {
                         self.message = status
@@ -44,6 +43,7 @@ struct SignIniew: View {
                     }else{
                         UserDefaults.standard.set(true,forKey: "status")
                         NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+                        timer.upstream.connect().cancel()
                     }
                 }
             } label: {
@@ -67,9 +67,11 @@ struct SignIniew: View {
                                 }
                         }
                         .onReceive(timer) { input in
-                            colors.swapAt(0, 1)
-                            colors.swapAt(1, 2)
-                            colors.swapAt(2, 3)
+                            withAnimation {
+                                colors.swapAt(0, 1)
+                                colors.swapAt(1, 2)
+                                colors.swapAt(2, 3)
+                            }
                         }
                         Text("Войти")
                             .font(.title2)

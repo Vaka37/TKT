@@ -16,9 +16,10 @@ struct OrderRow: View {
         } label: {
             HStack{
                 Text(String(numberItem))
-                VStack{
-                    Text(model.title)
-                    Text(model.phoneNumber)
+                HStack{
+                    Text(model.from)
+                    Text("----->")
+                    Text(model.to)
                 }
             }
         }

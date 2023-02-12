@@ -10,12 +10,13 @@ import SwiftUI
 
 
 struct OrderView: View{
-    @State var array = [ModelRow(title: "1", phoneNumber: "89611160000"),ModelRow(title: "2", phoneNumber: "89611160000"),ModelRow(title: "3", phoneNumber: "89611160000"),ModelRow(title: "4", phoneNumber: "89611160000"),ModelRow(title: "5", phoneNumber: "89611160000"),ModelRow(title: "6", phoneNumber: "89611160000"),ModelRow(title: "7", phoneNumber: "89611160000")]
+    
+    @EnvironmentObject var dataManager : DataManager
     
     var body: some View{
         NavigationView{
             List{
-                ForEach(Array(array.enumerated()), id:\.1){index, item in
+                ForEach(Array(dataManager.orderModel.enumerated()), id:\.1){index, item in
                     NavigationLink(destination: DetailOrder(item: item), label: {
                         OrderRow(model: item, numberItem: index + 1)
                     })
@@ -31,7 +32,7 @@ struct OrderView: View{
         }
     }
     private func delete(with indexSet: IndexSet) {
-        indexSet.forEach { array.remove(at: $0) }
+        indexSet.forEach { dataManager.orderModel.remove(at: $0) }
     }
 
 }

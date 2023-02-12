@@ -11,6 +11,9 @@ import SwiftUI
 struct DetailOrder: View{
     var item:  ModelRow
     var body: some View{
-        Text(item.title)
+        VStack{
+            Text(item.from)
+            Text(item.to)
+        }
     }
 }
