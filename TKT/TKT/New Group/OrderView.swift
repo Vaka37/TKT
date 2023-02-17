@@ -10,9 +10,7 @@ import SwiftUI
 
 
 struct OrderView: View{
-    
     @EnvironmentObject var dataManager : DataManager
-    
     var body: some View{
         NavigationView{
             List{
@@ -23,16 +21,28 @@ struct OrderView: View{
                 }
                 .onDelete(perform: delete)
             }
-            .navigationTitle(Text("Заказы"))
-            .navigationBarItems(trailing:
-                                    NavigationLink(destination: Home(), label: {
-                Image(systemName: "person.crop.circle")
-            })
-            )
-        }
+            .refreshable {
+                dataManager.fetchDataOrder()
+                //print{"Refresh"}
+            }
+            .listStyle(PlainListStyle())
+                .navigationTitle(Text("Заказы"))
+                .navigationBarItems(trailing:
+                                        HStack{
+                    Button {
+                       // dataManager.fetchDataOrder()
+                    } label: {
+                        Image(systemName: "slowmo")
+                    }
+                    NavigationLink(destination: Home(), label: {
+                        Image(systemName: "person.crop.circle")
+                    }
+                    )})
+            
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
     private func delete(with indexSet: IndexSet) {
         indexSet.forEach { dataManager.orderModel.remove(at: $0) }
     }
-
+    
 }

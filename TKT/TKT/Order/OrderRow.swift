@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct OrderRow: View {
+struct OrderRow: View,Identifiable {
+    var id = UUID()
     var model: ModelRow
     var numberItem: Int
     
@@ -16,11 +17,9 @@ struct OrderRow: View {
         } label: {
             HStack{
                 Text(String(numberItem))
-                HStack{
                     Text(model.from)
                     Text("----->")
                     Text(model.to)
-                }
             }
         }
     }

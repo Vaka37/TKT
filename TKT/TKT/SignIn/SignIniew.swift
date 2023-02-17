@@ -147,8 +147,8 @@ struct SignUp:View{
             }.alert(isPresented: $alert) {
                 Alert(title: Text("Error"), message: Text(self.message), dismissButton: .default(Text("OK")))
             }
-            .foregroundColor(.white)
-            .buttonStyle(.bordered)
+            .foregroundColor(.green)
+            .buttonStyle(.automatic)
             .frame(width: 130, height: 90)
             Spacer().frame(height: 50)
             
