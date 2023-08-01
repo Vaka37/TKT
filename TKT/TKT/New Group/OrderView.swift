@@ -29,6 +29,7 @@ struct OrderView: View{
                 .navigationTitle(Text("Заказы"))
                 .navigationBarItems(trailing:
                                         HStack{
+                    
                     Button {
                        // dataManager.fetchDataOrder()
                     } label: {
