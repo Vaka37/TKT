@@ -15,6 +15,7 @@ struct NewOrder: View {
             Text("Создайте новый заказ")
                 .fontWeight(.heavy).font(.largeTitle)
                 .padding()
+                .lineLimit(1)
             VStack(alignment: .leading){
                 Text("Откуда")
                 TextField("Введите где забрать", text: $settingNewOrder.from).textFieldStyle(.roundedBorder)
@@ -36,6 +37,6 @@ struct NewOrder: View {
             
         }.onTapGesture {
             hideKeyboard()
-        }
+        }.padding()
     }
 }
