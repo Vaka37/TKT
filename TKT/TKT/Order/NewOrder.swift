@@ -9,11 +9,11 @@ import SwiftUI
 
 struct NewOrder: View {
     @StateObject var settingNewOrder = SettingsNewOrder.shared
-    
+    @State private var showAlert = false
     var body: some View {
         VStack{
             Text("Создайте новый заказ")
-                .fontWeight(.heavy).font(.largeTitle)
+                .fontWeight(.semibold).font(.title)
                 .padding()
                 .lineLimit(1)
             VStack(alignment: .leading){
@@ -22,11 +22,15 @@ struct NewOrder: View {
                 Text("Куда")
                 TextField("Введите куда везем", text: $settingNewOrder.to).textFieldStyle(.roundedBorder)
                 Text("Вес груза")
-                TextField("Введите сколлько вессит груз", text: $settingNewOrder.weight).textFieldStyle(.roundedBorder)
+                TextField("Введите сколлько весит груз", text: $settingNewOrder.weight).textFieldStyle(.roundedBorder)
             }
             Spacer().frame(height: 50)
             Button {
-                
+                if settingNewOrder.valideForm(){
+                    showAlert.toggle()
+                }else{
+                    
+                }
             } label: {
                 Text("создать")
             }
@@ -38,5 +42,8 @@ struct NewOrder: View {
         }.onTapGesture {
             hideKeyboard()
         }.padding()
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("поля не могут быть пустыми"), message: Text("Введите данные"), dismissButton: .default(Text("OK")))
+            }
     }
 }
