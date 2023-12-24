@@ -23,16 +23,15 @@ class DataManager: ObservableObject{
         let ref = db.collection("order")
         ref.getDocuments(completion: {snapshot, error in
             guard error == nil else {
-                print(error?.localizedDescription)
                 return
             }
             if let snapshot = snapshot{
                 for document in snapshot.documents{
                     let data = document.data()
-                    
                     let from = data["from"] as? String ?? ""
                     let to = data["to"] as? String ?? ""
-                    let order = ModelRow(from: from, to: to)
+                    let weight = data["weight"] as? String ?? ""
+                    let order = ModelRow(from: from, to: to, weidth: weight)
                     self.orderModel.append(order)
                 }
             }

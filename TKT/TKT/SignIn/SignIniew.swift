@@ -11,7 +11,7 @@ import FirebaseAuth
 import UIKit
 
 struct SignIniew: View {
-    @StateObject var settingUser = SettingsUser()
+    @StateObject var settingUser = SettingsUser.shared
     @State var nameUser: String = ""
     @State var loginTextField: String = ""
     @State var passwordTextField: String = ""
@@ -41,8 +41,7 @@ struct SignIniew: View {
                         self.message = status
                         self.alert.toggle()
                     }else{
-                        UserDefaults.standard.set(true,forKey: "status")
-                        NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+                        createSaveUserDefaultAccaunt(name: settingUser.nameUser, email: settingUser.loginTextField)
                         timer.upstream.connect().cancel()
                     }
                 }
@@ -108,8 +107,8 @@ struct SignIniew: View {
     }
 }
 
-struct SignUp:View{
-    @StateObject var settingUser = SettingsUser()
+struct SignUp: View{
+    @StateObject var settingUser = SettingsUser.shared
     @State var nameUser: String = ""
     @State var loginTextField: String = ""
     @State var passwordTextField: String = ""
@@ -137,9 +136,8 @@ struct SignUp:View{
                         self.message = status
                         self.alert.toggle()
                     }else{
-                        UserDefaults.standard.set(true, forKey: "status")
+                        createSaveUserDefaultAccaunt(name: settingUser.nameUser, email: settingUser.loginTextField)
                         self.show.toggle()
-                        NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
                     }
                 }
             } label: {
@@ -175,5 +173,15 @@ func signUpWithEmail(email: String, password: String,complition: @escaping(Bool,
         }
         complition(true,(res?.user.email)!)
     }
+}
+func createSaveUserDefaultAccaunt(name: String,email: String) {
+        UserDefaults.standard.set(true, forKey: "status")
+        NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+        
+        UserDefaults.standard.set(name, forKey: "nameUser")
+        NotificationCenter.default.post(name: NSNotification.Name("nameUser"), object: nil)
+        
+        UserDefaults.standard.set(email, forKey: "emailUser")
+        NotificationCenter.default.post(name: NSNotification.Name("emailUser"), object: nil)
 }
 

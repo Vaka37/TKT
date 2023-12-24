@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4DAA9AD3B0903DE6D8BBB79E /* Pods_TKT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCAF94C3A740118A8CC7232 /* Pods_TKT.framework */; };
+		D52556A02B38D4D000EA22A1 /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D525569F2B38D4D000EA22A1 /* ModelUser.swift */; };
+		D57F41EC2B38E48C00A9B46C /* NewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57F41EB2B38E48C00A9B46C /* NewOrder.swift */; };
+		D57F41EE2B38E51500A9B46C /* SettingsNewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57F41ED2B38E51500A9B46C /* SettingsNewOrder.swift */; };
 		D59EAB892996BF6A00C93675 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59EAB882996BF6A00C93675 /* OrderView.swift */; };
 		D59EAB8E2996C52900C93675 /* OrderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59EAB8D2996C52900C93675 /* OrderRow.swift */; };
 		D59EAB902996C55600C93675 /* ModelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59EAB8F2996C55600C93675 /* ModelRow.swift */; };
@@ -29,6 +32,9 @@
 /* Begin PBXFileReference section */
 		60C5D0636A221C198FF0912C /* Pods-TKT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TKT.release.xcconfig"; path = "Target Support Files/Pods-TKT/Pods-TKT.release.xcconfig"; sourceTree = "<group>"; };
 		BE62FBB9DE767DB83E4913CB /* Pods-TKT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TKT.debug.xcconfig"; path = "Target Support Files/Pods-TKT/Pods-TKT.debug.xcconfig"; sourceTree = "<group>"; };
+		D525569F2B38D4D000EA22A1 /* ModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
+		D57F41EB2B38E48C00A9B46C /* NewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrder.swift; sourceTree = "<group>"; };
+		D57F41ED2B38E51500A9B46C /* SettingsNewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNewOrder.swift; sourceTree = "<group>"; };
 		D59EAB882996BF6A00C93675 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderView.swift; path = "../New Group/OrderView.swift"; sourceTree = "<group>"; };
 		D59EAB8D2996C52900C93675 /* OrderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRow.swift; sourceTree = "<group>"; };
 		D59EAB8F2996C55600C93675 /* ModelRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelRow.swift; sourceTree = "<group>"; };
@@ -79,12 +85,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D525569E2B38D4AB00EA22A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D59EAB8F2996C55600C93675 /* ModelRow.swift */,
+				D525569F2B38D4D000EA22A1 /* ModelUser.swift */,
+			);
+			name = Model;
+			path = ../Pods/Model;
+			sourceTree = "<group>";
+		};
 		D59EAB8A2996BF7600C93675 /* Order */ = {
 			isa = PBXGroup;
 			children = (
 				D59EAB882996BF6A00C93675 /* OrderView.swift */,
 				D59EAB8D2996C52900C93675 /* OrderRow.swift */,
-				D59EAB8F2996C55600C93675 /* ModelRow.swift */,
+				D57F41EB2B38E48C00A9B46C /* NewOrder.swift */,
+				D57F41ED2B38E51500A9B46C /* SettingsNewOrder.swift */,
 				D59EAB912996E0D100C93675 /* Detail */,
 				D59EABA02999422300C93675 /* DataManager.swift */,
 			);
@@ -119,7 +136,6 @@
 		D59EAB952997A60400C93675 /* SettingsUser */ = {
 			isa = PBXGroup;
 			children = (
-				D59EAB9D2997AF2900C93675 /* Extension */,
 				D59EAB962997A64200C93675 /* SettingsUser.swift */,
 			);
 			path = SettingsUser;
@@ -156,6 +172,8 @@
 			children = (
 				D59EAB9C2997AEBA00C93675 /* LocalizableRU.strings */,
 				D59EAB942997A2A500C93675 /* Info.plist */,
+				D59EAB9D2997AF2900C93675 /* Extension */,
+				D525569E2B38D4AB00EA22A1 /* Model */,
 				D59EAB952997A60400C93675 /* SettingsUser */,
 				D59EAB8C2996C01C00C93675 /* AppDelegate */,
 				D59EAB8B2996C00600C93675 /* SignIn */,
@@ -298,6 +316,7 @@
 				D59EABA12999422300C93675 /* DataManager.swift in Sources */,
 				D5E9DD0929578A3C002D5A09 /* SignIniew.swift in Sources */,
 				D59EAB902996C55600C93675 /* ModelRow.swift in Sources */,
+				D52556A02B38D4D000EA22A1 /* ModelUser.swift in Sources */,
 				D59EAB8E2996C52900C93675 /* OrderRow.swift in Sources */,
 				D59EAB9F2997AF4600C93675 /* Extension.swift in Sources */,
 				D5E9DD1B29579B7E002D5A09 /* Home.swift in Sources */,
@@ -306,6 +325,8 @@
 				D5E9DD1929579B07002D5A09 /* ContentView.swift in Sources */,
 				D5E9DD0729578A3C002D5A09 /* TKTApp.swift in Sources */,
 				D59EAB972997A64200C93675 /* SettingsUser.swift in Sources */,
+				D57F41EC2B38E48C00A9B46C /* NewOrder.swift in Sources */,
+				D57F41EE2B38E51500A9B46C /* SettingsNewOrder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

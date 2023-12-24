@@ -8,19 +8,35 @@
 import SwiftUI
 
 struct Home : View {
-    @StateObject var settingsUser = SettingsUser()
+    private let settingsUser = SettingsUser.shared
+    @State private var showViewNewOrder = false
     
     var body : some View{
         VStack{
             Text("Home")
             Text(settingsUser.nameUser)
             Button(action: {
-                UserDefaults.standard.set(false, forKey: "status")
-                NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+                deleteUserDefaultInfo()
             }) {
                 
                 Text("Выйти")
             }
-        }
+        }.navigationTitle("личная информация")
+            .navigationBarItems(trailing:
+                                    Button(action: {
+                self.showViewNewOrder.toggle()
+            }, label: {
+                Image(systemName: "plus.app")
+            })).sheet(isPresented: $showViewNewOrder, content: {
+               NewOrder()
+            })
+    }
+    
+    func deleteUserDefaultInfo(){
+        let defaults = UserDefaults.standard
+            let dictionary = defaults.dictionaryRepresentation()
+            dictionary.keys.forEach { key in
+                defaults.removeObject(forKey: key)
+            }
     }
 }

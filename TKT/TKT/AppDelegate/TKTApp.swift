@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import FirebaseCoreDiagnostics
 import FirebaseAuth
 import FirebaseCore
 
@@ -19,6 +18,7 @@ struct TKTApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(dataModel)
+                .preferredColorScheme(.light)
         }
     }
 }

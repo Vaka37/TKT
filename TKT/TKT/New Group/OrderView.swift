@@ -23,23 +23,13 @@ struct OrderView: View{
             }
             .refreshable {
                 dataManager.fetchDataOrder()
-                //print{"Refresh"}
             }
             .listStyle(PlainListStyle())
                 .navigationTitle(Text("Заказы"))
                 .navigationBarItems(trailing:
-                                        HStack{
-                    
-                    Button {
-                       // dataManager.fetchDataOrder()
-                    } label: {
-                        Image(systemName: "slowmo")
-                    }
                     NavigationLink(destination: Home(), label: {
                         Image(systemName: "person.crop.circle")
-                    }
-                    )})
-            
+                    }))
         }.navigationViewStyle(StackNavigationViewStyle())
     }
     private func delete(with indexSet: IndexSet) {

@@ -13,13 +13,15 @@ struct OrderRow: View,Identifiable {
     var numberItem: Int
     
     var body: some View {
-        Button {
-        } label: {
-            HStack{
-                Text(String(numberItem))
-                    Text(model.from)
-                    Text("----->")
-                    Text(model.to)
+        HStack(spacing: 5){
+            Text(String(numberItem))
+            Text(model.from)
+            Image(systemName: "arrow.forward")
+            Text(model.to)
+            Spacer()
+            if model.weidth != ""{
+            Image(systemName: "scalemass")
+                Text("\(model.weidth): кг")
             }
         }
     }
