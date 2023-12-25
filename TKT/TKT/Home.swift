@@ -13,11 +13,12 @@ struct Home : View {
     
     var body : some View{
         VStack{
+            Button("Exit"){deleteUserDefaultInfo()}
             Text(settingsUser.modelUser?.nameUser ?? "dima")
         }.navigationTitle("Home")
             .navigationBarItems(trailing:
                                     HStack{
-                Button("Exit"){deleteUserDefaultInfo()}.padding(.horizontal)
+                Text("Баланс").padding(.horizontal)
                 Button(action: {
                     self.showViewNewOrder.toggle()
                 }, label: {
