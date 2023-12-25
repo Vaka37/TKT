@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
-    @State var modelUser = SettingsUser.shared
+    var modelUser = SettingsUser.shared
     var body: some View {
         VStack{
             if status{
@@ -19,13 +19,14 @@ struct ContentView: View {
             }
         }
         .onAppear {
+            NotificationCenter.default.addObserver(forName: NSNotification.Name("statusChange"), object: nil, queue: .main) { (_) in
+                let status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
+                self.status = status}
             var name = ""
             var loginTextField = ""
             let password = ""
             for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
                 switch key {
-                case "status":
-                    self.status = value as? Bool ?? false
                 case "nameUser":
                     name = value as? String ?? "Unt"
                 case "emailUser":

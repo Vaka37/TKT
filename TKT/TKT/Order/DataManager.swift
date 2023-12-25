@@ -32,17 +32,18 @@ class DataManager: ObservableObject{
                     let from = data["from"] as? String ?? ""
                     let to = data["to"] as? String ?? ""
                     let weight = data["weight"] as? String ?? ""
-                    let order = ModelRow(from: from, to: to, weidth: weight)
+                    let description = data["description"] as? String ?? ""
+                    let order = ModelRow(from: from, to: to, weidth: weight, description: description)
                     self.orderModel.append(order)
                 }
             }
         })
     }
     
-    func addNewData(from: String,to: String,weight: String) {
+    func addNewData(from: String,to: String,weight: String,description: String) {
          var db = Firestore.firestore()
               do {
-                  _ = try db.collection("order").addDocument(data: ["from": from,"to": to, "weight": weight])
+                  _ = try db.collection("order").addDocument(data: ["from": from,"to": to, "weight": weight,"description":description])
                   fetchDataOrder()
               }
               catch {
