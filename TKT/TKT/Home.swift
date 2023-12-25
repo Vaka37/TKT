@@ -10,10 +10,13 @@ import SwiftUI
 struct Home : View {
     private let settingsUser = SettingsUser.shared
     @State private var showViewNewOrder = false
-    
+    @State private var exitAccouunt = false
     var body : some View{
         VStack{
-            Button("Exit"){deleteUserDefaultInfo()}
+            Button("Exit"){
+                deleteUserDefaultInfo()
+                exitAccouunt.toggle()
+                }
             Text(settingsUser.modelUser?.nameUser ?? "dima")
         }.navigationTitle("Home")
             .navigationBarItems(trailing:
@@ -27,6 +30,8 @@ struct Home : View {
             }
             ).sheet(isPresented: $showViewNewOrder, content: {
                 NewOrder()
+            }).fullScreenCover(isPresented: $exitAccouunt, content: {
+                ContentView()
             })
     }
     

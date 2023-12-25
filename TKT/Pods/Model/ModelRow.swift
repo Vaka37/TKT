@@ -12,4 +12,5 @@ struct ModelRow:Hashable,Decodable {
     var from: String
     var to: String
     var weidth: String
+    var description: String
 }

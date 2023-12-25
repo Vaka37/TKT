@@ -15,6 +15,7 @@ class SettingsNewOrder:ObservableObject{
     @Published var from = ""
     @Published var to = ""
     @Published var weight = ""
+    @Published var description = ""
     
     func valideForm() -> Bool {
         if from != "" ,to != "",weight != ""{
