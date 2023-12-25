@@ -12,8 +12,9 @@ import FirebaseDatabase
 
 class DataManager: ObservableObject{
     @Published var orderModel: [ModelRow] = []
+    static var shared = DataManager()
     
-    init(){
+   private init(){
         fetchDataOrder()
     }
     
@@ -37,4 +38,15 @@ class DataManager: ObservableObject{
             }
         })
     }
+    
+    func addNewData(from: String,to: String,weight: String) {
+         var db = Firestore.firestore()
+              do {
+                  _ = try db.collection("order").addDocument(data: ["from": from,"to": to, "weight": weight])
+                  fetchDataOrder()
+              }
+              catch {
+                  print(error.localizedDescription)
+              }
+          }
 }

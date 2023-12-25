@@ -10,7 +10,8 @@ import UIKit
 import FirebaseCore
 import FirebaseAuth
 import FirebaseFirestore
-
+//import FirebaseMessaging
+//import FirebaseAnalytics
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     var window: UIWindow?
@@ -21,3 +22,4 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     return true
   }
 }
+

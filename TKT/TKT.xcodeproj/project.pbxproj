@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4DAA9AD3B0903DE6D8BBB79E /* Pods_TKT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCAF94C3A740118A8CC7232 /* Pods_TKT.framework */; };
 		D52556A02B38D4D000EA22A1 /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D525569F2B38D4D000EA22A1 /* ModelUser.swift */; };
+		D578BC642B399D7E00E18A19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D578BC632B399D7E00E18A19 /* GoogleService-Info.plist */; };
 		D57F41EC2B38E48C00A9B46C /* NewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57F41EB2B38E48C00A9B46C /* NewOrder.swift */; };
 		D57F41EE2B38E51500A9B46C /* SettingsNewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57F41ED2B38E51500A9B46C /* SettingsNewOrder.swift */; };
 		D59EAB892996BF6A00C93675 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59EAB882996BF6A00C93675 /* OrderView.swift */; };
@@ -19,7 +20,6 @@
 		D59EAB9A2997AEBA00C93675 /* LocalizableRU.strings in Resources */ = {isa = PBXBuildFile; fileRef = D59EAB9C2997AEBA00C93675 /* LocalizableRU.strings */; };
 		D59EAB9F2997AF4600C93675 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59EAB9E2997AF4600C93675 /* Extension.swift */; };
 		D59EABA12999422300C93675 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59EABA02999422300C93675 /* DataManager.swift */; };
-		D5C9E9462957A34000351F3E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5C9E9452957A34000351F3E /* GoogleService-Info.plist */; };
 		D5E9DD0729578A3C002D5A09 /* TKTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9DD0629578A3C002D5A09 /* TKTApp.swift */; };
 		D5E9DD0929578A3C002D5A09 /* SignIniew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9DD0829578A3C002D5A09 /* SignIniew.swift */; };
 		D5E9DD0B29578A3E002D5A09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5E9DD0A29578A3E002D5A09 /* Assets.xcassets */; };
@@ -33,6 +33,7 @@
 		60C5D0636A221C198FF0912C /* Pods-TKT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TKT.release.xcconfig"; path = "Target Support Files/Pods-TKT/Pods-TKT.release.xcconfig"; sourceTree = "<group>"; };
 		BE62FBB9DE767DB83E4913CB /* Pods-TKT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TKT.debug.xcconfig"; path = "Target Support Files/Pods-TKT/Pods-TKT.debug.xcconfig"; sourceTree = "<group>"; };
 		D525569F2B38D4D000EA22A1 /* ModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
+		D578BC632B399D7E00E18A19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D57F41EB2B38E48C00A9B46C /* NewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrder.swift; sourceTree = "<group>"; };
 		D57F41ED2B38E51500A9B46C /* SettingsNewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNewOrder.swift; sourceTree = "<group>"; };
 		D59EAB882996BF6A00C93675 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderView.swift; path = "../New Group/OrderView.swift"; sourceTree = "<group>"; };
@@ -44,7 +45,6 @@
 		D59EAB9B2997AEBA00C93675 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LocalizableRU.strings; sourceTree = "<group>"; };
 		D59EAB9E2997AF4600C93675 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		D59EABA02999422300C93675 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		D5C9E9452957A34000351F3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D5E9DD0329578A3C002D5A09 /* TKT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E9DD0629578A3C002D5A09 /* TKTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TKTApp.swift; sourceTree = "<group>"; };
 		D5E9DD0829578A3C002D5A09 /* SignIniew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIniew.swift; sourceTree = "<group>"; };
@@ -104,6 +104,7 @@
 				D57F41ED2B38E51500A9B46C /* SettingsNewOrder.swift */,
 				D59EAB912996E0D100C93675 /* Detail */,
 				D59EABA02999422300C93675 /* DataManager.swift */,
+				D578BC632B399D7E00E18A19 /* GoogleService-Info.plist */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -180,7 +181,6 @@
 				D5E9DD1A29579B7E002D5A09 /* Home.swift */,
 				D5E9DD1829579B07002D5A09 /* ContentView.swift */,
 				D59EAB8A2996BF7600C93675 /* Order */,
-				D5C9E9452957A34000351F3E /* GoogleService-Info.plist */,
 				D5E9DD0A29578A3E002D5A09 /* Assets.xcassets */,
 				D5E9DD0C29578A3E002D5A09 /* Preview Content */,
 			);
@@ -257,9 +257,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5E9DD0E29578A3E002D5A09 /* Preview Assets.xcassets in Resources */,
+				D578BC642B399D7E00E18A19 /* GoogleService-Info.plist in Resources */,
 				D5E9DD0B29578A3E002D5A09 /* Assets.xcassets in Resources */,
 				D59EAB9A2997AEBA00C93675 /* LocalizableRU.strings in Resources */,
-				D5C9E9462957A34000351F3E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +471,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TKT/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -501,6 +502,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TKT/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

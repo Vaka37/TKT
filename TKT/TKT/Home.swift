@@ -13,30 +13,27 @@ struct Home : View {
     
     var body : some View{
         VStack{
-            Text("Home")
-            Text(settingsUser.nameUser)
-            Button(action: {
-                deleteUserDefaultInfo()
-            }) {
-                
-                Text("Выйти")
-            }
-        }.navigationTitle("личная информация")
+            Text(settingsUser.modelUser?.nameUser ?? "dima")
+        }.navigationTitle("Home")
             .navigationBarItems(trailing:
-                                    Button(action: {
-                self.showViewNewOrder.toggle()
-            }, label: {
-                Image(systemName: "plus.app")
-            })).sheet(isPresented: $showViewNewOrder, content: {
-               NewOrder()
+                                    HStack{
+                Button("Exit"){deleteUserDefaultInfo()}.padding(.horizontal)
+                Button(action: {
+                    self.showViewNewOrder.toggle()
+                }, label: {
+                    Image(systemName: "plus.app")
+                })
+            }
+            ).sheet(isPresented: $showViewNewOrder, content: {
+                NewOrder()
             })
     }
     
     func deleteUserDefaultInfo(){
         let defaults = UserDefaults.standard
-            let dictionary = defaults.dictionaryRepresentation()
-            dictionary.keys.forEach { key in
-                defaults.removeObject(forKey: key)
-            }
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
     }
 }

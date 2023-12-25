@@ -11,14 +11,20 @@ target 'TKT' do
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
 pod 'FirebaseDatabase'
+pod 'FirebaseMessaging'
+pod 'FirebaseAnalytics'
 end
 post_install do |installer|
-     installer.generated_projects.each do |project|
-         project.targets.each do |target|
-                target.build_configurations.each do |config|
-                    config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
-    config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
-                  end
-              end
-          end
-      end
+	xcode_base_version = `xcodebuild -version | grep 'Xcode' | awk '{print $2}' | cut -d . -f 1`
+
+	installer.pods_project.targets.each do |target|
+		target.build_configurations.each do |config|
+			if config.base_configuration_reference && Integer(xcode_base_version) >= 15
+				xcconfig_path = config.base_configuration_reference.real_path
+				xcconfig = File.read(xcconfig_path)
+				xcconfig_mod = xcconfig.gsub(/DT_TOOLCHAIN_DIR/, "TOOLCHAIN_DIR")
+				File.open(xcconfig_path, "w") { |file| file << xcconfig_mod }
+			end
+		end
+	end
+end

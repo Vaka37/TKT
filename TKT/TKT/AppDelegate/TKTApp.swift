@@ -12,7 +12,7 @@ import FirebaseCore
 @main
 
 struct TKTApp: App {
-    @StateObject var dataModel = DataManager()
+    @StateObject var dataModel = DataManager.shared
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {

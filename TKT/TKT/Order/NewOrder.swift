@@ -9,7 +9,9 @@ import SwiftUI
 
 struct NewOrder: View {
     @StateObject var settingNewOrder = SettingsNewOrder.shared
+    private var dataManager = DataManager.shared
     @State private var showAlert = false
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         VStack{
             Text("Создайте новый заказ")
@@ -21,15 +23,17 @@ struct NewOrder: View {
                 TextField("Введите где забрать", text: $settingNewOrder.from).textFieldStyle(.roundedBorder)
                 Text("Куда")
                 TextField("Введите куда везем", text: $settingNewOrder.to).textFieldStyle(.roundedBorder)
-                Text("Вес груза")
+                Text("Вес груза : кг")
                 TextField("Введите сколлько весит груз", text: $settingNewOrder.weight).textFieldStyle(.roundedBorder)
+                    .keyboardType(.numberPad)
             }
             Spacer().frame(height: 50)
             Button {
                 if settingNewOrder.valideForm(){
                     showAlert.toggle()
                 }else{
-                    
+                    dataManager.addNewData(from: settingNewOrder.from, to: settingNewOrder.to, weight: settingNewOrder.weight)
+                    self.presentationMode.wrappedValue.dismiss()
                 }
             } label: {
                 Text("создать")
