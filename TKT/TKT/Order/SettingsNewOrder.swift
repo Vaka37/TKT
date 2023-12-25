@@ -16,11 +16,19 @@ class SettingsNewOrder:ObservableObject{
     @Published var to = ""
     @Published var weight = ""
     @Published var description = ""
+    @Published var rate = ""
     
     func valideForm() -> Bool {
-        if from != "" ,to != "",weight != ""{
+        if from != "" ,to != "",weight != "",rate != ""{
             return false
         }
         return true
+    }
+    func clearForm() {
+        from = ""
+        to = ""
+        weight = ""
+        description = ""
+        rate = ""
     }
 }

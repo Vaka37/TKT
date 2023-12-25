@@ -34,6 +34,7 @@
 		BE62FBB9DE767DB83E4913CB /* Pods-TKT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TKT.debug.xcconfig"; path = "Target Support Files/Pods-TKT/Pods-TKT.debug.xcconfig"; sourceTree = "<group>"; };
 		D525569F2B38D4D000EA22A1 /* ModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
 		D578BC632B399D7E00E18A19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D578BC7E2B3A235D00E18A19 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LocalizableRU.strings; sourceTree = "<group>"; };
 		D57F41EB2B38E48C00A9B46C /* NewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrder.swift; sourceTree = "<group>"; };
 		D57F41ED2B38E51500A9B46C /* SettingsNewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNewOrder.swift; sourceTree = "<group>"; };
 		D59EAB882996BF6A00C93675 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderView.swift; path = "../New Group/OrderView.swift"; sourceTree = "<group>"; };
@@ -337,6 +338,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D59EAB9B2997AEBA00C93675 /* ru */,
+				D578BC7E2B3A235D00E18A19 /* en */,
 			);
 			name = LocalizableRU.strings;
 			sourceTree = "<group>";

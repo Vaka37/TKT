@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NewOrder: View {
     @StateObject var settingNewOrder = SettingsNewOrder.shared
+    private let settingsUser = SettingsUser.shared
     private var dataManager = DataManager.shared
     @State private var placeholder = "Введите подробности заказа"
     @State private var showAlert = false
@@ -27,6 +28,9 @@ struct NewOrder: View {
                 Text("Вес груза : кг")
                 TextField("Введите сколлько весит груз", text: $settingNewOrder.weight).textFieldStyle(.roundedBorder)
                     .keyboardType(.numberPad)
+                Text("Цена : руб")
+                TextField("Введите ставку", text: $settingNewOrder.rate).textFieldStyle(.roundedBorder)
+                    .keyboardType(.numberPad)
                 TextEditorWithPlaceholder(text: $settingNewOrder.description)
             }
             Spacer().frame(height: 50)
@@ -34,7 +38,8 @@ struct NewOrder: View {
                 if settingNewOrder.valideForm(){
                     showAlert.toggle()
                 }else{
-                    dataManager.addNewData(from: settingNewOrder.from, to: settingNewOrder.to, weight: settingNewOrder.weight, description: settingNewOrder.description)
+                    let orderModel = ModelRow(id: UUID().uuidString, from: settingNewOrder.from, to: settingNewOrder.to, weidth: settingNewOrder.weight, description: settingNewOrder.description, accountEmail: settingsUser.modelUser?.emailUser ?? "", rate: Int(settingNewOrder.rate) ?? 0)
+                    dataManager.addNewDataOrder(modelOrder: orderModel)
                     self.presentationMode.wrappedValue.dismiss()
                 }
             } label: {
@@ -50,7 +55,9 @@ struct NewOrder: View {
         }.padding()
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("поля не могут быть пустыми"), message: Text("Введите данные"), dismissButton: .default(Text("OK")))
-            }
+            }.onDisappear(perform: {
+                settingNewOrder.clearForm()
+            })
     }
 }
 

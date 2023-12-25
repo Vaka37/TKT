@@ -5,3 +5,5 @@
   Created by Kalandarov Vakil on 11.02.2023.
   
 */
+
+"The password must be 6 characters long or more." = "Пароль должен содержать не менее 6 символов.";

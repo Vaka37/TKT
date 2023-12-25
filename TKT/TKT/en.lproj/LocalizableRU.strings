@@ -1,0 +1,9 @@
+/* 
+  LocalizableRU.strings
+  TKT
+
+  Created by Kalandarov Vakil on 11.02.2023.
+  
+*/
+
+"The password must be 6 characters long or more." = "The password must be 6 characters long or more.";

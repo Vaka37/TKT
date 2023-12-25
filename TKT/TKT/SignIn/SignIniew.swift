@@ -12,9 +12,7 @@ import UIKit
 
 struct SignIniew: View {
     @StateObject var settingUser = SettingsUser.shared
-    @State var nameUser: String = ""
-    @State var loginTextField: String = ""
-    @State var passwordTextField: String = ""
+    @EnvironmentObject var dataManager : DataManager
     @State var message = ""
     @State var alert = false
     @State var show = false
@@ -28,10 +26,8 @@ struct SignIniew: View {
                 .fontWeight(.heavy).font(.largeTitle)
                 .padding()
             VStack(alignment: .leading){
-                Text("Имя")
-                TextField("Введите ваше имя", text: $settingUser.nameUser).textFieldStyle(.roundedBorder)
                 Text("e-mail")
-                TextField("Введите ваш e-mail", text: $settingUser.loginTextField).textFieldStyle(.roundedBorder)
+                TextField("Введите ваш e-mail", text: $settingUser.loginTextField).textFieldStyle(.roundedBorder).keyboardType(.emailAddress)
                 Text("Пароль")
                 TextField("Введите ваш пароль", text: $settingUser.passwordTextField).textFieldStyle(.roundedBorder)
             }.padding()
@@ -42,6 +38,8 @@ struct SignIniew: View {
                         self.alert.toggle()
                     }else{
                         createSaveUserDefaultAccaunt(name: settingUser.nameUser, email: settingUser.loginTextField)
+                        let modelUser = ModelUser(nameUser: settingUser.nameUser, emailUser: settingUser.loginTextField, passwordUser: settingUser.passwordTextField)
+                        dataManager.fetchUserDataOrder(modelUser: modelUser)
                         timer.upstream.connect().cancel()
                     }
                 }
@@ -109,6 +107,7 @@ struct SignIniew: View {
 
 struct SignUp: View{
     @StateObject var settingUser = SettingsUser.shared
+    @EnvironmentObject var dataManager : DataManager
     @State var nameUser: String = ""
     @State var loginTextField: String = ""
     @State var passwordTextField: String = ""
@@ -118,32 +117,36 @@ struct SignUp: View{
     
     var body: some View {
         VStack{
-            Text("Sign Up")
+            Text("Регистрация")
                 .fontWeight(.heavy).font(.largeTitle)
                 .padding()
             VStack(alignment: .leading){
                 Text("Имя")
                 TextField("Введите ваше имя", text: $settingUser.nameUser).textFieldStyle(.roundedBorder)
                 Text("e-mail")
-                TextField("Введите ваш e-mail", text: $settingUser.loginTextField).textFieldStyle(.roundedBorder)
+                TextField("Введите ваш e-mail", text: $settingUser.loginTextField).textFieldStyle(.roundedBorder).keyboardType(.emailAddress)
                 Text("Пароль")
                 TextField("Введите ваш пароль", text: $settingUser.passwordTextField).textFieldStyle(.roundedBorder)
-            }
+            }.padding()
             Spacer().frame(height: 50)
             Button {
                 signUpWithEmail(email: self.settingUser.loginTextField, password: self.settingUser.passwordTextField) { verified, status in
                     if !verified {
                         self.message = status
+                        debugPrint(message,"::::")
                         self.alert.toggle()
                     }else{
                         createSaveUserDefaultAccaunt(name: settingUser.nameUser, email: settingUser.loginTextField)
+                        let modelUser = ModelUser(nameUser: settingUser.nameUser, emailUser: settingUser.loginTextField, passwordUser: settingUser.passwordTextField)
+                        dataManager.addNewUser(modelUser: modelUser)
+                        dataManager.fetchUserDataOrder(modelUser: modelUser)
                         self.show.toggle()
                     }
                 }
             } label: {
                 Text("Sign Up")
             }.alert(isPresented: $alert) {
-                Alert(title: Text("Error"), message: Text(self.message), dismissButton: .default(Text("OK")))
+                Alert(title: Text("Error"), message: Text(self.message.localized()), dismissButton: .default(Text("OK")))
             }
             .foregroundColor(.green)
             .buttonStyle(.automatic)

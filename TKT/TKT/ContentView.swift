@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
-    var modelUser = SettingsUser.shared
+    @EnvironmentObject var dataManager : DataManager
     var body: some View {
         VStack{
             if status{
@@ -36,7 +36,8 @@ struct ContentView: View {
                 }
             }
             //MARK: - пароль еще не устанавливал, пароли в юзер дефолте не хранят использовать кей чей
-            modelUser.modelUser = ModelUser(nameUser: name, loginTextField: loginTextField, passwordTextField: "123456")
+           let user = ModelUser(nameUser: name, emailUser: loginTextField, passwordUser: "123456")
+            dataManager.fetchUserDataOrder(modelUser: user)
         }
     }
 }

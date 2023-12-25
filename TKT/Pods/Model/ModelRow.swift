@@ -8,9 +8,11 @@
 import Foundation
 
 struct ModelRow:Hashable,Decodable {
-    var id = UUID()
+    var id: String
     var from: String
     var to: String
     var weidth: String
     var description: String
+    var accountEmail: String
+    var rate: Int
 }

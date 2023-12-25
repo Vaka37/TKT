@@ -9,7 +9,7 @@ import Foundation
 
 struct ModelUser {
     var nameUser: String
-    var loginTextField: String
-    var passwordTextField: String
+    var emailUser: String
+    var passwordUser: String
    // var status: String
 }

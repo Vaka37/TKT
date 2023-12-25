@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 extension String {
-    var localized: String {
-        NSLocalizedString(self, comment: "")
+    func localized() -> String {
+        return NSLocalizedString(self,comment: "")
     }
 }
 
