@@ -15,4 +15,7 @@ struct ModelRow:Hashable,Decodable {
     var description: String
     var accountEmail: String
     var rate: Int
+    var date : Date
+    var tonnage: String
+    var volume : String
 }

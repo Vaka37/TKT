@@ -13,6 +13,7 @@ pod 'FirebaseFirestore'
 pod 'FirebaseDatabase'
 pod 'FirebaseMessaging'
 pod 'FirebaseAnalytics'
+pod 'YandexMapsMobile', '4.4.0-lite'
 end
 post_install do |installer|
 	xcode_base_version = `xcodebuild -version | grep 'Xcode' | awk '{print $2}' | cut -d . -f 1`

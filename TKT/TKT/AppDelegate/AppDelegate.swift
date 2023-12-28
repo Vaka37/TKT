@@ -10,16 +10,17 @@ import UIKit
 import FirebaseCore
 import FirebaseAuth
 import FirebaseFirestore
-//import FirebaseMessaging
-//import FirebaseAnalytics
+import YandexMapsMobile
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     var window: UIWindow?
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-      window?.overrideUserInterfaceStyle = .light
-    return true
-  }
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        YMKMapKit.setApiKey("a469959f-9649-4fd3-9f65-62d6df2549a8")
+        YMKMapKit.sharedInstance()
+        window?.overrideUserInterfaceStyle = .light
+        return true
+    }
 }
 

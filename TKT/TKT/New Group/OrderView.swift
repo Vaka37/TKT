@@ -21,15 +21,21 @@ struct OrderView: View{
                 }
                 .onDelete(perform: delete)
             }
-            .refreshable {
-                dataManager.fetchDataOrder()
-            }
+            //MARK: - свыше 15 ios решить вопрос
+//            .refreshable {
+//                dataManager.fetchDataOrder()
+//            }
             .listStyle(PlainListStyle())
                 .navigationTitle(Text("Заказы"))
                 .navigationBarItems(trailing:
+                                        HStack{
+                    Button("Refresh"){
+                        dataManager.fetchDataOrder()
+                    }
                     NavigationLink(destination: Home(), label: {
                         Image(systemName: "person.crop.circle")
-                    }))
+                    })
+                })
         }.navigationViewStyle(StackNavigationViewStyle())
     }
     private func delete(with indexSet: IndexSet) {

@@ -15,7 +15,7 @@ struct ContentView: View {
             if status{
                 OrderView()
             }else{
-                SignIniew()
+                StartView()
             }
         }
         .onAppear {

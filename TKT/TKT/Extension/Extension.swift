@@ -19,3 +19,8 @@ extension View {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
+
+extension Color{
+    static let colorTextFields = Color("ColorTextField")
+    static let greyCustom = Color("greyCustom")
+}

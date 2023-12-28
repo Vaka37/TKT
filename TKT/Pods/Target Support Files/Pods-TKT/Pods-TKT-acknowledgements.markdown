@@ -4413,6 +4413,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    limitations under the License.
 
 
+## YandexMapsMobile
+
+https://yandex.ru/legal/maps_api/ 2016 © Yandex. All rights reserved.
+
 ## abseil
 
 

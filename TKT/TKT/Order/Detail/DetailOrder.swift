@@ -11,6 +11,7 @@ import SwiftUI
 struct DetailOrder: View{
     @EnvironmentObject var dataManager : DataManager
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @ObservedObject var locationManager = LocationManager()
     @State private var deleteOrderAlert = false
     var item:  ModelRow
     var settingUser = SettingsUser.shared
@@ -23,6 +24,14 @@ struct DetailOrder: View{
             Text(item.to)
             Text(item.description)
             Text(item.id)
+            Text(item.date.description)
+            Text(item.tonnage)
+            Text(item.volume)
+            YandexMapView().environmentObject(locationManager)
+        .onAppear{
+            
+            locationManager.currentUserLocation()
+        }
             Spacer()
             if item.accountEmail == settingUser.modelUser?.emailUser{
                 Button("Delete Order"){

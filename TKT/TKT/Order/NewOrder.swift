@@ -15,49 +15,77 @@ struct NewOrder: View {
     @State private var showAlert = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
-        VStack{
-            Text("Создайте новый заказ")
-                .fontWeight(.semibold).font(.title)
-                .padding()
-                .lineLimit(1)
-            VStack(alignment: .leading){
-                Text("Откуда")
-                TextField("Введите где забрать", text: $settingNewOrder.from).textFieldStyle(.roundedBorder)
-                Text("Куда")
-                TextField("Введите куда везем", text: $settingNewOrder.to).textFieldStyle(.roundedBorder)
-                Text("Вес груза : кг")
-                TextField("Введите сколлько весит груз", text: $settingNewOrder.weight).textFieldStyle(.roundedBorder)
-                    .keyboardType(.numberPad)
-                Text("Цена : руб")
-                TextField("Введите ставку", text: $settingNewOrder.rate).textFieldStyle(.roundedBorder)
-                    .keyboardType(.numberPad)
-                TextEditorWithPlaceholder(text: $settingNewOrder.description)
-            }
-            Spacer().frame(height: 50)
-            Button {
-                if settingNewOrder.valideForm(){
-                    showAlert.toggle()
-                }else{
-                    let orderModel = ModelRow(id: UUID().uuidString, from: settingNewOrder.from, to: settingNewOrder.to, weidth: settingNewOrder.weight, description: settingNewOrder.description, accountEmail: settingsUser.modelUser?.emailUser ?? "", rate: Int(settingNewOrder.rate) ?? 0)
-                    dataManager.addNewDataOrder(modelOrder: orderModel)
-                    self.presentationMode.wrappedValue.dismiss()
+        ScrollView{
+            VStack{
+                VStack(alignment: .leading){
+                    HStack{
+                        VStack{
+                            Text("Откуда")
+                            TextField("Где забрать", text: $settingNewOrder.from).textFieldStyle(.roundedBorder)
+                        }
+                        VStack{
+                            Text("Куда")
+                            TextField("Куда везем", text: $settingNewOrder.to).textFieldStyle(.roundedBorder)
+                        }
+                    }
+                    HStack{
+                        VStack{
+                            Text("Вес груза : кг")
+                            TextField("Сколько весит груз", text: $settingNewOrder.weight).textFieldStyle(.roundedBorder)
+                                .keyboardType(.numberPad)
+                        }
+                        VStack{
+                            Text("Цена : руб")
+                            TextField("Введите ставку", text: $settingNewOrder.rate).textFieldStyle(.roundedBorder)
+                                .keyboardType(.numberPad)
+                        }
+                    }
+                    HStack{
+                        VStack{
+                            Text("Грузоподъемность: т")
+                            TextField("Грузоподъемность: т", text: $settingNewOrder.tonnage).textFieldStyle(.roundedBorder)
+                                .keyboardType(.numberPad)
+                        }
+                        VStack{
+                            Text("Объём кузова: м³")
+                            TextField("Введите объем", text: $settingNewOrder.volume).textFieldStyle(.roundedBorder)
+                                .keyboardType(.numberPad)
+                        }
+                    }
+                    TextEditorWithPlaceholder(text: $settingNewOrder.description).border(.black.opacity(0.3), width: 1).clipShape(Rectangle())
                 }
-            } label: {
-                Text("создать")
-            }
-            .foregroundColor(.green)
-            .buttonStyle(.automatic)
-            .frame(width: 130, height: 90)
-            Spacer().frame(height: 50)
-            
-        }.onTapGesture {
-            hideKeyboard()
-        }.padding()
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("поля не могут быть пустыми"), message: Text("Введите данные"), dismissButton: .default(Text("OK")))
-            }.onDisappear(perform: {
-                settingNewOrder.clearForm()
-            })
+                Spacer().frame(height: 50)
+                Button {
+                    if settingNewOrder.valideForm(){
+                        showAlert.toggle()
+                    }else{
+                        settingNewOrder.createNewOrder()
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                } label: {
+                    Text("создать")
+                }
+                .foregroundColor(.green)
+                .buttonStyle(.automatic)
+                .frame(width: 130, height: 90)
+                Spacer().frame(height: 50)
+                
+            }.navigationTitle("Создайте новый заказ")
+                .navigationBarBackButtonHidden(true)
+                .navigationBarItems(trailing:
+                                        Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image(systemName: "xmark")}))
+                .onTapGesture {
+                    hideKeyboard()
+                }.padding()
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("поля не могут быть пустыми"), message: Text("Введите данные"), dismissButton: .default(Text("OK")))
+                }.onDisappear(perform: {
+                    settingNewOrder.clearForm()
+                })
+        }
     }
 }
 

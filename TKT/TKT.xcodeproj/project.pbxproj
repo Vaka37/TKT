@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4DAA9AD3B0903DE6D8BBB79E /* Pods_TKT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCAF94C3A740118A8CC7232 /* Pods_TKT.framework */; };
+		D50849162B3CC5CB0077C5EF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50849152B3CC5CB0077C5EF /* LocationManager.swift */; };
+		D508491B2B3CC6FB0077C5EF /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D508491A2B3CC6FB0077C5EF /* MapView.swift */; };
 		D52556A02B38D4D000EA22A1 /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D525569F2B38D4D000EA22A1 /* ModelUser.swift */; };
 		D578BC642B399D7E00E18A19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D578BC632B399D7E00E18A19 /* GoogleService-Info.plist */; };
+		D57F2F3E2B3C972D005FB39D /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57F2F3D2B3C972D005FB39D /* StartView.swift */; };
 		D57F41EC2B38E48C00A9B46C /* NewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57F41EB2B38E48C00A9B46C /* NewOrder.swift */; };
 		D57F41EE2B38E51500A9B46C /* SettingsNewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57F41ED2B38E51500A9B46C /* SettingsNewOrder.swift */; };
 		D59EAB892996BF6A00C93675 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59EAB882996BF6A00C93675 /* OrderView.swift */; };
@@ -32,9 +35,12 @@
 /* Begin PBXFileReference section */
 		60C5D0636A221C198FF0912C /* Pods-TKT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TKT.release.xcconfig"; path = "Target Support Files/Pods-TKT/Pods-TKT.release.xcconfig"; sourceTree = "<group>"; };
 		BE62FBB9DE767DB83E4913CB /* Pods-TKT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TKT.debug.xcconfig"; path = "Target Support Files/Pods-TKT/Pods-TKT.debug.xcconfig"; sourceTree = "<group>"; };
+		D50849152B3CC5CB0077C5EF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		D508491A2B3CC6FB0077C5EF /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D525569F2B38D4D000EA22A1 /* ModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
 		D578BC632B399D7E00E18A19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D578BC7E2B3A235D00E18A19 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LocalizableRU.strings; sourceTree = "<group>"; };
+		D57F2F3D2B3C972D005FB39D /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		D57F41EB2B38E48C00A9B46C /* NewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrder.swift; sourceTree = "<group>"; };
 		D57F41ED2B38E51500A9B46C /* SettingsNewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNewOrder.swift; sourceTree = "<group>"; };
 		D59EAB882996BF6A00C93675 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderView.swift; path = "../New Group/OrderView.swift"; sourceTree = "<group>"; };
@@ -86,6 +92,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D50849172B3CC5D70077C5EF /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				D50849152B3CC5CB0077C5EF /* LocationManager.swift */,
+			);
+			path = LocationManager;
+			sourceTree = "<group>";
+		};
+		D50849192B3CC5F90077C5EF /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				D59EABA02999422300C93675 /* DataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		D525569E2B38D4AB00EA22A1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +126,6 @@
 				D57F41EB2B38E48C00A9B46C /* NewOrder.swift */,
 				D57F41ED2B38E51500A9B46C /* SettingsNewOrder.swift */,
 				D59EAB912996E0D100C93675 /* Detail */,
-				D59EABA02999422300C93675 /* DataManager.swift */,
 				D578BC632B399D7E00E18A19 /* GoogleService-Info.plist */,
 			);
 			path = Order;
@@ -114,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				D5E9DD0829578A3C002D5A09 /* SignIniew.swift */,
+				D57F2F3D2B3C972D005FB39D /* StartView.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -172,6 +194,7 @@
 		D5E9DD0529578A3C002D5A09 /* TKT */ = {
 			isa = PBXGroup;
 			children = (
+				D50849192B3CC5F90077C5EF /* DataManager */,
 				D59EAB9C2997AEBA00C93675 /* LocalizableRU.strings */,
 				D59EAB942997A2A500C93675 /* Info.plist */,
 				D59EAB9D2997AF2900C93675 /* Extension */,
@@ -184,6 +207,8 @@
 				D59EAB8A2996BF7600C93675 /* Order */,
 				D5E9DD0A29578A3E002D5A09 /* Assets.xcassets */,
 				D5E9DD0C29578A3E002D5A09 /* Preview Content */,
+				D50849172B3CC5D70077C5EF /* LocationManager */,
+				D508491A2B3CC6FB0077C5EF /* MapView.swift */,
 			);
 			path = TKT;
 			sourceTree = "<group>";
@@ -208,6 +233,7 @@
 				D5E9DD0029578A3C002D5A09 /* Frameworks */,
 				D5E9DD0129578A3C002D5A09 /* Resources */,
 				080A3305E227D1D6DF226682 /* [CP] Embed Pods Frameworks */,
+				FD54073DDB3E57DC9E7FF771 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -306,6 +332,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FD54073DDB3E57DC9E7FF771 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TKT/Pods-TKT-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TKT/Pods-TKT-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TKT/Pods-TKT-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -314,10 +357,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5E9DD1729579212002D5A09 /* AppDelegate.swift in Sources */,
+				D50849162B3CC5CB0077C5EF /* LocationManager.swift in Sources */,
 				D59EABA12999422300C93675 /* DataManager.swift in Sources */,
 				D5E9DD0929578A3C002D5A09 /* SignIniew.swift in Sources */,
+				D57F2F3E2B3C972D005FB39D /* StartView.swift in Sources */,
 				D59EAB902996C55600C93675 /* ModelRow.swift in Sources */,
 				D52556A02B38D4D000EA22A1 /* ModelUser.swift in Sources */,
+				D508491B2B3CC6FB0077C5EF /* MapView.swift in Sources */,
 				D59EAB8E2996C52900C93675 /* OrderRow.swift in Sources */,
 				D59EAB9F2997AF4600C93675 /* Extension.swift in Sources */,
 				D5E9DD1B29579B7E002D5A09 /* Home.swift in Sources */,
@@ -477,7 +523,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -508,7 +554,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

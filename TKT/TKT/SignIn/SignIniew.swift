@@ -13,24 +13,48 @@ import UIKit
 struct SignIniew: View {
     @StateObject var settingUser = SettingsUser.shared
     @EnvironmentObject var dataManager : DataManager
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var message = ""
     @State var alert = false
+    @State private var showPassword = false
     @State var show = false
-    @State private var angle: Double = 0.0
-    @State var colors: [Color] = [.red, .blue, .green, .purple]
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
+
     var body: some View {
         VStack{
-            Text("Вход")
+            Text("Добро пожаловать! Рад видеть вас снова!")
                 .fontWeight(.heavy).font(.largeTitle)
                 .padding()
             VStack(alignment: .leading){
-                Text("e-mail")
-                TextField("Введите ваш e-mail", text: $settingUser.loginTextField).textFieldStyle(.roundedBorder).keyboardType(.emailAddress)
-                Text("Пароль")
-                TextField("Введите ваш пароль", text: $settingUser.passwordTextField).textFieldStyle(.roundedBorder)
+                TextField("Введите ваш e-mail", text: $settingUser.loginTextField)
+                    .frame(height: 56)
+                    .background(RoundedRectangle(cornerRadius: 10).foregroundColor(Color.colorTextFields))
+                    .keyboardType(.emailAddress)
+                    .padding(.vertical)
+                HStack {
+                    if !showPassword{
+                        SecureField("Введите ваш пароль", text: $settingUser.passwordTextField)
+                        Button {
+                            withAnimation{
+                                showPassword.toggle()
+                            }
+                        } label: {
+                            Image(systemName: "flashlight.off.fill").foregroundColor(.gray)
+                        }.padding(.horizontal,10)
+                        
+                    }else{
+                        TextField("Введите ваш пароль", text: $settingUser.passwordTextField)
+                        Button {
+                            withAnimation{
+                                showPassword.toggle()
+                            }
+                        } label: {
+                            Image(systemName: "flashlight.on.fill").foregroundColor(.gray).rotationEffect(.degrees(-90))
+                        }.padding(.horizontal,10)
+                    }
+                  }.frame(height: 56)
+                    .background(RoundedRectangle(cornerRadius: 10).foregroundColor(Color.colorTextFields))
             }.padding()
+                .padding(.vertical)
             Button {
                 signInWithEmail(email: self.settingUser.loginTextField, password: self.settingUser.passwordTextField) { verified, status in
                     if !verified {
@@ -40,74 +64,41 @@ struct SignIniew: View {
                         createSaveUserDefaultAccaunt(name: settingUser.nameUser, email: settingUser.loginTextField)
                         let modelUser = ModelUser(nameUser: settingUser.nameUser, emailUser: settingUser.loginTextField, passwordUser: settingUser.passwordTextField)
                         dataManager.fetchUserDataOrder(modelUser: modelUser)
-                        timer.upstream.connect().cancel()
                     }
                 }
             } label: {
-                GeometryReader(content: { geometry in
-                    ZStack {
-                        AngularGradient(gradient: Gradient(colors: colors),
-                                        center: .center,
-                                        angle: .degrees(angle))
-                        .blendMode(.overlay)
-                        .blur(radius: 6)
-                        .mask(
-                            RoundedRectangle(cornerRadius: 16)
-                                .frame(maxWidth: geometry.size.width - 16)
-                                .frame(height: 50)
-                                .blur(radius: 6)
-                        )
-                        .onAppear() {
-                            withAnimation(Animation.linear(duration: 7)
-                                .repeatForever(autoreverses: false)) {
-                                    angle += 360
-                                }
-                        }
-                        .onReceive(timer) { input in
-                            withAnimation {
-                                colors.swapAt(0, 1)
-                                colors.swapAt(1, 2)
-                                colors.swapAt(2, 3)
-                            }
-                        }
-                        Text("Войти")
-                            .font(.title2)
-                            .bold()
-                            .foregroundColor(Color.black)
-                            .frame(height: 50)
-                            .frame(maxWidth: geometry.size.width - 16)
-                            .background(Color.white)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 16)
-                                    .stroke(Color.white, lineWidth: 1)
-                                    .opacity(0.9)
-                            )
-                            .cornerRadius(16)
-                    }
-                })
-            }.alert(isPresented: $alert) {
+                Text("Войти")
+                    .padding()
+                    .foregroundColor(.white)
+            }.frame(width: 360).background(Color.black).cornerRadius(10).shadow(color: .black.opacity(0.7), radius: 10, x: 0, y: 5)
+            .alert(isPresented: $alert) {
                 Alert(title: Text("Error"), message: Text(self.message), dismissButton: .default(Text("OK")))
             }
-            Spacer().frame(height: 50)
+            Spacer()
             HStack{
-                Text("Нет Аккаунта? ->")
-                Button {
+                Text("Нет Аккаунта?")
+                Button("Присоединиться"){
                     show.toggle()
-                } label: {
-                    Text("Присоединиться")
                 }
             }.sheet(isPresented: $show) {
                 SignUp(show: self.show)
             }
+
         }.onTapGesture {
             hideKeyboard()
-        }
+        }.navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Image(uiImage: UIImage(named: "navigationBackButton") ?? UIImage())
+            }))
     }
 }
 
 struct SignUp: View{
     @StateObject var settingUser = SettingsUser.shared
     @EnvironmentObject var dataManager : DataManager
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var nameUser: String = ""
     @State var loginTextField: String = ""
     @State var passwordTextField: String = ""
@@ -155,7 +146,12 @@ struct SignUp: View{
             
         }.onTapGesture {
             hideKeyboard()
-        }
+        }.navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Image(uiImage: UIImage(named: "navigationBackButton") ?? UIImage())
+            }))
     }
     
 }

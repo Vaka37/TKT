@@ -30,15 +30,11 @@ struct Home : View {
             .navigationBarItems(trailing:
                                     HStack{
                 Text("Баланс").padding(.horizontal)
-                Button(action: {
-                    self.showViewNewOrder.toggle()
-                }, label: {
+                NavigationLink(destination: NewOrder(), label: {
                     Image(systemName: "plus.app")
                 })
             }
-            ).sheet(isPresented: $showViewNewOrder, content: {
-                NewOrder()
-            }).fullScreenCover(isPresented: $closeAccauntView, content: {
+            ).fullScreenCover(isPresented: $closeAccauntView, content: {
                 ContentView()
             })
     }
