@@ -29,9 +29,8 @@ struct StartView: View {
                         Text("Регистрация")
                             .padding()
                             .foregroundColor(.black)
-                            
                             .cornerRadius(10)
-                    }.frame(width: 360).background(Color.clear).cornerRadius(10).border(.black.opacity(0.3), width: 1)
+                    }.frame(width: 360).background(Color.clear).border(.black.opacity(0.3), width: 1).cornerRadius(10)
                     Spacer().frame(height: 100)
                 }
             }

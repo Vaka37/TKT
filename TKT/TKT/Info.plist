@@ -6,7 +6,5 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Для определения вашего местоположения</string>
 </dict>
 </plist>

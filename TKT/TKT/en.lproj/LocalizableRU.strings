@@ -6,4 +6,4 @@
   
 */
 
-"The password must be 6 characters long or more." = "The password must be 6 characters long or more.";
+"The password must be 6 characters long or more." = "Пароль должен содержать не менее 6 символов.";

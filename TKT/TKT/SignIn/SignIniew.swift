@@ -18,7 +18,7 @@ struct SignIniew: View {
     @State var alert = false
     @State private var showPassword = false
     @State var show = false
-
+    
     var body: some View {
         VStack{
             Text("Добро пожаловать! Рад видеть вас снова!")
@@ -26,6 +26,7 @@ struct SignIniew: View {
                 .padding()
             VStack(alignment: .leading){
                 TextField("Введите ваш e-mail", text: $settingUser.loginTextField)
+                    .padding(EdgeInsets(top: 0, leading: 6, bottom: 0, trailing: 30))
                     .frame(height: 56)
                     .background(RoundedRectangle(cornerRadius: 10).foregroundColor(Color.colorTextFields))
                     .keyboardType(.emailAddress)
@@ -33,6 +34,7 @@ struct SignIniew: View {
                 HStack {
                     if !showPassword{
                         SecureField("Введите ваш пароль", text: $settingUser.passwordTextField)
+                            .padding(EdgeInsets(top: 0, leading: 6, bottom: 0, trailing: 30))
                         Button {
                             withAnimation{
                                 showPassword.toggle()
@@ -40,18 +42,24 @@ struct SignIniew: View {
                         } label: {
                             Image(systemName: "flashlight.off.fill").foregroundColor(.gray)
                         }.padding(.horizontal,10)
-                        
                     }else{
-                        TextField("Введите ваш пароль", text: $settingUser.passwordTextField)
-                        Button {
-                            withAnimation{
-                                showPassword.toggle()
+                        ZStack{
+                            TextField("Введите ваш пароль", text: $settingUser.passwordTextField)
+                                .padding(EdgeInsets(top: 0, leading: 6, bottom: 0, trailing: 30))
+                            HStack{
+                                Triangle()
+                                    .foregroundColor(.yellow.opacity(0.3))
+                                Button {
+                                    withAnimation{
+                                        showPassword.toggle()
+                                    }
+                                } label: {
+                                    Image(systemName: "flashlight.on.fill").foregroundColor(.gray).rotationEffect(.degrees(-90))
+                                }.padding(.horizontal,10)
                             }
-                        } label: {
-                            Image(systemName: "flashlight.on.fill").foregroundColor(.gray).rotationEffect(.degrees(-90))
-                        }.padding(.horizontal,10)
+                        }
                     }
-                  }.frame(height: 56)
+                }.frame(height: 56)
                     .background(RoundedRectangle(cornerRadius: 10).foregroundColor(Color.colorTextFields))
             }.padding()
                 .padding(.vertical)
@@ -71,9 +79,9 @@ struct SignIniew: View {
                     .padding()
                     .foregroundColor(.white)
             }.frame(width: 360).background(Color.black).cornerRadius(10).shadow(color: .black.opacity(0.7), radius: 10, x: 0, y: 5)
-            .alert(isPresented: $alert) {
-                Alert(title: Text("Error"), message: Text(self.message), dismissButton: .default(Text("OK")))
-            }
+                .alert(isPresented: $alert) {
+                    Alert(title: Text("Error"), message: Text(self.message), dismissButton: .default(Text("OK")))
+                }
             Spacer()
             HStack{
                 Text("Нет Аккаунта?")
@@ -83,7 +91,7 @@ struct SignIniew: View {
             }.sheet(isPresented: $show) {
                 SignUp(show: self.show)
             }
-
+            
         }.onTapGesture {
             hideKeyboard()
         }.navigationBarBackButtonHidden(true)
@@ -174,13 +182,13 @@ func signUpWithEmail(email: String, password: String,complition: @escaping(Bool,
     }
 }
 func createSaveUserDefaultAccaunt(name: String,email: String) {
-        UserDefaults.standard.set(true, forKey: "status")
-        NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
-        
-        UserDefaults.standard.set(name, forKey: "nameUser")
-        NotificationCenter.default.post(name: NSNotification.Name("nameUser"), object: nil)
-        
-        UserDefaults.standard.set(email, forKey: "emailUser")
-        NotificationCenter.default.post(name: NSNotification.Name("emailUser"), object: nil)
+    UserDefaults.standard.set(true, forKey: "status")
+    NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+    
+    UserDefaults.standard.set(name, forKey: "nameUser")
+    NotificationCenter.default.post(name: NSNotification.Name("nameUser"), object: nil)
+    
+    UserDefaults.standard.set(email, forKey: "emailUser")
+    NotificationCenter.default.post(name: NSNotification.Name("emailUser"), object: nil)
 }
 
