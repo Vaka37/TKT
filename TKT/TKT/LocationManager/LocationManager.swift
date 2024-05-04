@@ -67,17 +67,17 @@ class LocationManager: NSObject, CLLocationManagerDelegate,ObservableObject{
         let point = YMKPoint(latitude: 59.935493, longitude: 30.327392)
         let viewPlacemark: YMKPlacemarkMapObject = mapView.mapWindow.map.mapObjects.addPlacemark(with: point)
         
-        viewPlacemark.setIconWith(
-            UIImage(named: "location")!,
-            style: YMKIconStyle(
-                anchor: CGPoint(x: 0.5, y: 0.5) as NSValue,
-                rotationType: YMKRotationType.rotate.rawValue as NSNumber,
-                zIndex: 0,
-                flat: true,
-                visible: true,
-                scale: 1.5,
-                tappableArea: nil
-            )
-        )
+//        viewPlacemark.setIconWith(
+//            UIImage(named: "location")!,
+//            style: YMKIconStyle(
+//                anchor: CGPoint(x: 0.5, y: 0.5) as NSValue,
+//                rotationType: YMKRotationType.rotate.rawValue as NSNumber,
+//                zIndex: 0,
+//                flat: true,
+//                visible: true,
+//                scale: 1.5,
+//                tappableArea: nil
+//            )
+//        )
     }
 }

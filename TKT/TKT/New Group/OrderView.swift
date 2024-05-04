@@ -28,14 +28,9 @@ struct OrderView: View{
             .listStyle(PlainListStyle())
                 .navigationTitle(Text("Заказы"))
                 .navigationBarItems(trailing:
-                                        HStack{
                     Button("Refresh"){
                         dataManager.fetchDataOrder()
-                    }
-                    NavigationLink(destination: Home(), label: {
-                        Image(systemName: "person.crop.circle")
                     })
-                })
         }.navigationViewStyle(StackNavigationViewStyle())
     }
     private func delete(with indexSet: IndexSet) {

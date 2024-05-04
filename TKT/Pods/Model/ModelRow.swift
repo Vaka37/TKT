@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ModelRow:Hashable,Decodable {
+struct ModelRow: Hashable,Decodable {
     var id: String
     var from: String
     var to: String

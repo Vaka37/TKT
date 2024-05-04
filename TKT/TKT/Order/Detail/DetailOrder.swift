@@ -29,7 +29,6 @@ struct DetailOrder: View{
             Text(item.volume)
             YandexMapView().environmentObject(locationManager)
         .onAppear{
-            
             locationManager.currentUserLocation()
         }
             Spacer()

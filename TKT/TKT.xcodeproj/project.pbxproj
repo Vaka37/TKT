@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		102DBAB62BD2FBFE00EFFB98 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102DBAB52BD2FBFE00EFFB98 /* Triangle.swift */; };
+		103A31FB2BE6CFC000EFCA66 /* TabBarMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A31FA2BE6CFC000EFCA66 /* TabBarMainView.swift */; };
+		103A31FE2BE6D89C00EFCA66 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A31FD2BE6D89C00EFCA66 /* AccountViewModel.swift */; };
+		103A32122BE6F1EE00EFCA66 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A32112BE6F1EE00EFCA66 /* HomeView.swift */; };
 		4DAA9AD3B0903DE6D8BBB79E /* Pods_TKT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCAF94C3A740118A8CC7232 /* Pods_TKT.framework */; };
 		D50849162B3CC5CB0077C5EF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50849152B3CC5CB0077C5EF /* LocationManager.swift */; };
 		D508491B2B3CC6FB0077C5EF /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D508491A2B3CC6FB0077C5EF /* MapView.swift */; };
@@ -30,11 +33,14 @@
 		D5E9DD0E29578A3E002D5A09 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5E9DD0D29578A3E002D5A09 /* Preview Assets.xcassets */; };
 		D5E9DD1729579212002D5A09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9DD1629579212002D5A09 /* AppDelegate.swift */; };
 		D5E9DD1929579B07002D5A09 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9DD1829579B07002D5A09 /* ContentView.swift */; };
-		D5E9DD1B29579B7E002D5A09 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9DD1A29579B7E002D5A09 /* Home.swift */; };
+		D5E9DD1B29579B7E002D5A09 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9DD1A29579B7E002D5A09 /* AccountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		102DBAB52BD2FBFE00EFFB98 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		103A31FA2BE6CFC000EFCA66 /* TabBarMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMainView.swift; sourceTree = "<group>"; };
+		103A31FD2BE6D89C00EFCA66 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		103A32112BE6F1EE00EFCA66 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		60C5D0636A221C198FF0912C /* Pods-TKT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TKT.release.xcconfig"; path = "Target Support Files/Pods-TKT/Pods-TKT.release.xcconfig"; sourceTree = "<group>"; };
 		BE62FBB9DE767DB83E4913CB /* Pods-TKT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TKT.debug.xcconfig"; path = "Target Support Files/Pods-TKT/Pods-TKT.debug.xcconfig"; sourceTree = "<group>"; };
 		D50849152B3CC5CB0077C5EF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -61,7 +67,7 @@
 		D5E9DD0D29578A3E002D5A09 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D5E9DD1629579212002D5A09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5E9DD1829579B07002D5A09 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		D5E9DD1A29579B7E002D5A09 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		D5E9DD1A29579B7E002D5A09 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		DFCAF94C3A740118A8CC7232 /* Pods_TKT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TKT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -83,6 +89,40 @@
 				102DBAB52BD2FBFE00EFFB98 /* Triangle.swift */,
 			);
 			path = HelpView;
+			sourceTree = "<group>";
+		};
+		103A31FC2BE6D5C400EFCA66 /* TabBarMainView */ = {
+			isa = PBXGroup;
+			children = (
+				103A31FA2BE6CFC000EFCA66 /* TabBarMainView.swift */,
+			);
+			path = TabBarMainView;
+			sourceTree = "<group>";
+		};
+		103A31FF2BE6D8CC00EFCA66 /* Account Module */ = {
+			isa = PBXGroup;
+			children = (
+				103A32002BE6D8EA00EFCA66 /* View */,
+				103A31FD2BE6D89C00EFCA66 /* AccountViewModel.swift */,
+			);
+			path = "Account Module";
+			sourceTree = "<group>";
+		};
+		103A32002BE6D8EA00EFCA66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5E9DD1A29579B7E002D5A09 /* AccountView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		103A32102BE6F1D600EFCA66 /* HomeModule */ = {
+			isa = PBXGroup;
+			children = (
+				103A32112BE6F1EE00EFCA66 /* HomeView.swift */,
+			);
+			name = HomeModule;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		178FE35A33BCBA2DC3FAB62E /* Pods */ = {
@@ -203,7 +243,10 @@
 		D5E9DD0529578A3C002D5A09 /* TKT */ = {
 			isa = PBXGroup;
 			children = (
+				D59EAB8C2996C01C00C93675 /* AppDelegate */,
+				103A31FF2BE6D8CC00EFCA66 /* Account Module */,
 				102DBAB42BD2FBE300EFFB98 /* HelpView */,
+				103A32102BE6F1D600EFCA66 /* HomeModule */,
 				D50849192B3CC5F90077C5EF /* DataManager */,
 				D59EAB9C2997AEBA00C93675 /* LocalizableRU.strings */,
 				D59EAB942997A2A500C93675 /* Info.plist */,
@@ -211,10 +254,9 @@
 				D59EAB9D2997AF2900C93675 /* Extension */,
 				D525569E2B38D4AB00EA22A1 /* Model */,
 				D59EAB952997A60400C93675 /* SettingsUser */,
-				D59EAB8C2996C01C00C93675 /* AppDelegate */,
 				D59EAB8B2996C00600C93675 /* SignIn */,
-				D5E9DD1A29579B7E002D5A09 /* Home.swift */,
 				D5E9DD1829579B07002D5A09 /* ContentView.swift */,
+				103A31FC2BE6D5C400EFCA66 /* TabBarMainView */,
 				D59EAB8A2996BF7600C93675 /* Order */,
 				D5E9DD0A29578A3E002D5A09 /* Assets.xcassets */,
 				D5E9DD0C29578A3E002D5A09 /* Preview Content */,
@@ -368,9 +410,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5E9DD1729579212002D5A09 /* AppDelegate.swift in Sources */,
+				103A31FE2BE6D89C00EFCA66 /* AccountViewModel.swift in Sources */,
 				D50849162B3CC5CB0077C5EF /* LocationManager.swift in Sources */,
 				D59EABA12999422300C93675 /* DataManager.swift in Sources */,
 				102DBAB62BD2FBFE00EFFB98 /* Triangle.swift in Sources */,
+				103A32122BE6F1EE00EFCA66 /* HomeView.swift in Sources */,
 				D5E9DD0929578A3C002D5A09 /* SignIniew.swift in Sources */,
 				D57F2F3E2B3C972D005FB39D /* StartView.swift in Sources */,
 				D59EAB902996C55600C93675 /* ModelRow.swift in Sources */,
@@ -378,10 +422,11 @@
 				D508491B2B3CC6FB0077C5EF /* MapView.swift in Sources */,
 				D59EAB8E2996C52900C93675 /* OrderRow.swift in Sources */,
 				D59EAB9F2997AF4600C93675 /* Extension.swift in Sources */,
-				D5E9DD1B29579B7E002D5A09 /* Home.swift in Sources */,
+				D5E9DD1B29579B7E002D5A09 /* AccountView.swift in Sources */,
 				D59EAB892996BF6A00C93675 /* OrderView.swift in Sources */,
 				D59EAB932996E0F600C93675 /* DetailOrder.swift in Sources */,
 				D5E9DD1929579B07002D5A09 /* ContentView.swift in Sources */,
+				103A31FB2BE6CFC000EFCA66 /* TabBarMainView.swift in Sources */,
 				D5E9DD0729578A3C002D5A09 /* TKTApp.swift in Sources */,
 				D59EAB972997A64200C93675 /* SettingsUser.swift in Sources */,
 				D57F41EC2B38E48C00A9B46C /* NewOrder.swift in Sources */,
